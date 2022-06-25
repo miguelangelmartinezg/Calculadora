@@ -13,9 +13,9 @@ namespace Calculadora
     public partial class miCalculadora : Form
     {
 
+        //
         bool lValidar = true;
-        string cOperacion = "+";
-        string cOperacion1 = " ";
+        string cOperacion = "+";       
         decimal nCaputura;
         decimal nTotal;
         public miCalculadora()
@@ -162,7 +162,7 @@ namespace Calculadora
         }
         private void btnPunto_Click(object sender, EventArgs e)
         {
-            
+            //Valido que solo se Inserte un Punto decimal
             if (lblCaptura.Text.Contains("."))
             {
                 return;
@@ -238,22 +238,22 @@ namespace Calculadora
             switch (cOperacion)
             {
                 case "+":
-                    nTotal = nCaputura + Convert.ToDecimal(lblCaptura.Text);
+                    nTotal = Math.Round(nCaputura + Convert.ToDecimal(lblCaptura.Text), 2);
                     lblDisplay.Text = lblDisplay.Text + " " + lblCaptura.Text + " = ";
                     lblCaptura.Text = nTotal.ToString();
                         break;
                 case "-":
-                    nTotal = nCaputura - Convert.ToDecimal(lblCaptura.Text);
+                    nTotal = Math.Round(nCaputura - Convert.ToDecimal(lblCaptura.Text), 2);
                     lblDisplay.Text = lblDisplay.Text + " " + lblCaptura.Text + " = ";
                     lblCaptura.Text = nTotal.ToString();
                     break;
                 case "*":
-                    nTotal = nCaputura * Convert.ToDecimal(lblCaptura.Text);
+                    nTotal = Math.Round(nCaputura * Convert.ToDecimal(lblCaptura.Text), 2);
                     lblDisplay.Text = lblDisplay.Text + " " + lblCaptura.Text + " = ";
                     lblCaptura.Text = nTotal.ToString();
                     break;
                 case "/":
-                    nTotal = nCaputura / Convert.ToDecimal(lblCaptura.Text);
+                    nTotal = Math.Round(nCaputura / Convert.ToDecimal(lblCaptura.Text),2);
                     lblDisplay.Text = lblDisplay.Text + " " + lblCaptura.Text + " = ";
                     lblCaptura.Text = nTotal.ToString();
                     break;

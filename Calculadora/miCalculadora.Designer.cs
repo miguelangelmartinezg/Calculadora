@@ -29,9 +29,11 @@ namespace Calculadora
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(miCalculadora));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCaptura = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblDisplay = new System.Windows.Forms.Label();
+            this.lblCaptura = new System.Windows.Forms.Label();
             this.btnIgual = new System.Windows.Forms.Button();
             this.btnPunto = new System.Windows.Forms.Button();
             this.btnCero = new System.Windows.Forms.Button();
@@ -59,7 +61,6 @@ namespace Calculadora
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCe = new System.Windows.Forms.Button();
             this.btnPorciento = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -100,15 +101,16 @@ namespace Calculadora
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // lblCaptura
+            // groupBox2
             // 
-            this.lblCaptura.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaptura.Location = new System.Drawing.Point(8, 65);
-            this.lblCaptura.Name = "lblCaptura";
-            this.lblCaptura.Size = new System.Drawing.Size(351, 50);
-            this.lblCaptura.TabIndex = 29;
-            this.lblCaptura.Text = ".";
-            this.lblCaptura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Controls.Add(this.lblDisplay);
+            this.groupBox2.Controls.Add(this.lblCaptura);
+            this.groupBox2.Location = new System.Drawing.Point(6, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(365, 118);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
             // 
             // lblDisplay
             // 
@@ -119,6 +121,16 @@ namespace Calculadora
             this.lblDisplay.TabIndex = 28;
             this.lblDisplay.Text = ".";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCaptura
+            // 
+            this.lblCaptura.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaptura.Location = new System.Drawing.Point(8, 65);
+            this.lblCaptura.Name = "lblCaptura";
+            this.lblCaptura.Size = new System.Drawing.Size(351, 50);
+            this.lblCaptura.TabIndex = 29;
+            this.lblCaptura.Text = ".";
+            this.lblCaptura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnIgual
             // 
@@ -339,11 +351,11 @@ namespace Calculadora
             // btnRaiz
             // 
             this.btnRaiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaiz.Image = ((System.Drawing.Image)(resources.GetObject("btnRaiz.Image")));
             this.btnRaiz.Location = new System.Drawing.Point(186, 234);
             this.btnRaiz.Name = "btnRaiz";
             this.btnRaiz.Size = new System.Drawing.Size(93, 66);
             this.btnRaiz.TabIndex = 6;
-            this.btnRaiz.Text = "X";
             this.btnRaiz.UseVisualStyleBackColor = true;
             // 
             // btnPotencia
@@ -408,23 +420,13 @@ namespace Calculadora
             this.btnPorciento.Text = "%";
             this.btnPorciento.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Controls.Add(this.lblDisplay);
-            this.groupBox2.Controls.Add(this.lblCaptura);
-            this.groupBox2.Location = new System.Drawing.Point(6, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(365, 118);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            // 
             // miCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 578);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "miCalculadora";
             this.Text = "Calculadora";
             this.Load += new System.EventHandler(this.miCalculadora_Load);
